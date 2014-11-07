@@ -14,8 +14,9 @@ public interface BanqueManager {
 	 *
 	 * @param client
 	 *            the client
+	 * @return if client existe
 	 */
-	public void addClient(Client client);
+	public Boolean addClient(Client client);
 
 	/**
 	 * Removes the client.
