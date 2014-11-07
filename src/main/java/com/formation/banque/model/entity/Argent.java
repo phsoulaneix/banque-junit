@@ -21,6 +21,7 @@ public class Argent {
 	 */
 	public Argent(Integer id, Integer somme) {
 		super();
+		this.id = id;
 		this.somme = somme;
 	}
 

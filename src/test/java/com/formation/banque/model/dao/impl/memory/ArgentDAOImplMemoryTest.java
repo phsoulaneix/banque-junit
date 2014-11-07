@@ -4,6 +4,8 @@ import static org.junit.Assert.fail;
 
 import java.sql.SQLException;
 
+import junit.framework.Assert;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,21 +44,13 @@ public class ArgentDAOImplMemoryTest {
 	@Test
 	public void testCreate() {
 		final ArgentDAO argentDAO = new ArgentDAOImplMemory();
-		try {
-			argentDAO.create(new Argent(1, 10));
-		} catch (final SQLException e) {
-			fail("Création impossible");
-		}
 
 		try {
-			argentDAO.create(new Argent(null, 10));
-		} catch (final SQLException e) {
-			fail("Création impossible");
-		}
-
-		try {
-			argentDAO.create(new Argent(1, null));
-		} catch (final SQLException e) {
+			Assert.assertTrue(argentDAO.create(new Argent(1, 10)));
+			Assert.assertFalse(argentDAO.create(new Argent(null, 10)));
+			Assert.assertFalse(argentDAO.create(new Argent(1, null)));
+			Assert.assertFalse(argentDAO.create(new Argent(null, null)));
+		} catch (final SQLException e1) {
 			fail("Création impossible");
 		}
 	}

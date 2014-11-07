@@ -23,13 +23,13 @@ public class ArgentDAOImplMemory implements ArgentDAO {
 	@Override
 	public boolean create(Argent obj) throws SQLException {
 		if (obj.getId() == null || obj.getSomme() == null) {
-			return false;
+			return Boolean.FALSE;
 		}
 		if (argents.containsKey(obj.getId())) {
-			return false;
+			return Boolean.FALSE;
 		}
 		argents.put(obj.getId(), obj);
-		return true;
+		return Boolean.TRUE;
 	}
 
 	/*
