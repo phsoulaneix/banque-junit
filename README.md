@@ -3,8 +3,9 @@ banque-junit
 
 JUNIT
 ---------------------
-* A l’aide de JUnit, compléter la classe de test ArgentDAOImplMemoryTest et créer une classe de test pour chacun des beans développé ci-dessus.
-* Toutes les possibilités doivent être testées (y compris, validation de paramètres, exceptions, etc...). 
+* Lancer les tests JUNIT et vérifier que vous avez bien un test qui fonctionne.
+* A l’aide de JUnit, compléter la classe de test ArgentDAOImplMemoryTest pour que les 5 tests passe au vert
+* Créer une classe de test pour chacun des DAO développé ci-dessus. (Toutes les possibilités doivent être testées, y compris, validation de paramètres, exceptions, etc...). Les tests resterons rouges, car les classes testés ne sont pas implementer.
 * Implemennter certaine classe pour faire passer les tests au vert pour ArgentDAO.
 * Vérifier à l’aide d’Emma que l’ensemble des cas sont couverts (http://www.eclemma.org/installation.html).
 * Compléter vos tests si besoin
@@ -21,7 +22,8 @@ Aide : http://blog.soat.fr/2013/07/mockito-ou-comment-faciliter-lecriture-de-tes
 
 Base De Données
 -----------------
-On décide maintenant d’implémenter une version “base de données” de nos DAOs. Ecrire de nouveaux DAOs qui effectue les lectures/ecritures dans une base de données relationnelle (à base de SQL-standard, en utilisant, par exemple, ID pour générer les clés primaires).
-Écrire les tests unitaires à base de mocks sur les DAOs préalablement créés.
+On décide maintenant d’implémenter une version “base de données” de nos DAOs. Ecrire de nouveaux DAOs qui effectue les lectures/ecritures dans une base de données relationnelle (à l'aide de JPA).
 
-Nous allons maintenant créer des tests d’intégration. Choisir un SGBDR de votre choix (si possible installé sur votre machine) et importer la dépendance dans votre projet. Créer des tests d’intégration (suffixés IT au lieu de Test) qui effectuent directement les appels (tests boite noire). Pour gérer la base de données, utiliser le plugin maven sql-maven-plugin (http://mojo.codehaus.org/sql-maven-plugin/) afin de gérer l’initialisation de la base de données (drop + création du schéma).
+Tests d’intégration
+----------------------
+Nous allons maintenant créer des tests d’intégration. Créer des tests d’intégration (suffixés IT au lieu de Test) qui effectuent directement les appels (tests boite noire), sans Mock. 
