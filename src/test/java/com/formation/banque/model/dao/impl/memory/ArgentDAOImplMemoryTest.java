@@ -9,6 +9,8 @@ import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import com.formation.banque.model.dao.ArgentDAO;
 import com.formation.banque.model.entity.memory.ArgentMemory;
@@ -16,6 +18,7 @@ import com.formation.banque.model.entity.memory.ArgentMemory;
 /**
  * The Class ArgentDAOImplMemoryTest.
  */
+@RunWith(JUnit4.class)
 public class ArgentDAOImplMemoryTest {
 
 	/**
