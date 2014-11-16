@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.formation.banque.model.dao.ArgentDAO;
-import com.formation.banque.model.entity.Argent;
+import com.formation.banque.model.entity.memory.ArgentMemory;
 
 /**
  * The Class ArgentDAOImplMemoryTest.
@@ -46,10 +46,10 @@ public class ArgentDAOImplMemoryTest {
 		final ArgentDAO argentDAO = new ArgentDAOImplMemory();
 
 		try {
-			Assert.assertTrue(argentDAO.create(new Argent(1, 10)));
-			Assert.assertFalse(argentDAO.create(new Argent(null, 10)));
-			Assert.assertFalse(argentDAO.create(new Argent(1, null)));
-			Assert.assertFalse(argentDAO.create(new Argent(null, null)));
+			Assert.assertTrue(argentDAO.create(new ArgentMemory(1, 10)));
+			Assert.assertFalse(argentDAO.create(new ArgentMemory(null, 10)));
+			Assert.assertFalse(argentDAO.create(new ArgentMemory(1, null)));
+			Assert.assertFalse(argentDAO.create(new ArgentMemory(null, null)));
 		} catch (final SQLException e1) {
 			fail("Création impossible");
 		}

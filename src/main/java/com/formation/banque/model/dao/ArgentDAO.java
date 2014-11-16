@@ -1,10 +1,10 @@
 package com.formation.banque.model.dao;
 
-import com.formation.banque.model.entity.Argent;
+import com.formation.banque.model.entity.memory.ArgentMemory;
 
 /**
  * The Interface ArgentDAO.
  */
-public interface ArgentDAO extends DAO<Argent> {
+public interface ArgentDAO extends DAO<ArgentMemory> {
 
 }

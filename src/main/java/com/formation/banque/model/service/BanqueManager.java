@@ -1,8 +1,8 @@
 package com.formation.banque.model.service;
 
-import com.formation.banque.model.entity.Argent;
-import com.formation.banque.model.entity.Client;
-import com.formation.banque.model.entity.Compte;
+import com.formation.banque.model.entity.memory.ArgentMemory;
+import com.formation.banque.model.entity.memory.ClientMemory;
+import com.formation.banque.model.entity.memory.CompteMemory;
 
 /**
  * The Interface BanqueManager.
@@ -16,7 +16,7 @@ public interface BanqueManager {
 	 *            the client
 	 * @return if client existe
 	 */
-	public Boolean addClient(Client client);
+	public Boolean addClient(ClientMemory client);
 
 	/**
 	 * Removes the client.
@@ -25,7 +25,7 @@ public interface BanqueManager {
 	 *            the client
 	 * @return the boolean
 	 */
-	public Boolean removeClient(Client client);
+	public Boolean removeClient(ClientMemory client);
 
 	/**
 	 * Adds the compte.
@@ -35,7 +35,7 @@ public interface BanqueManager {
 	 * @param compte
 	 *            the compte
 	 */
-	public void addCompte(Client client, Compte compte);
+	public void addCompte(ClientMemory client, CompteMemory compte);
 
 	/**
 	 * Removes the compte.
@@ -46,7 +46,7 @@ public interface BanqueManager {
 	 *            the compte
 	 * @return the boolean
 	 */
-	public Boolean removeCompte(Client client, Compte compte);
+	public Boolean removeCompte(ClientMemory client, CompteMemory compte);
 
 	/**
 	 * Adds the argent.
@@ -58,7 +58,7 @@ public interface BanqueManager {
 	 * @param argent
 	 *            the argent
 	 */
-	public void addArgent(Client client, Compte compte, Argent argent);
+	public void addArgent(ClientMemory client, CompteMemory compte, ArgentMemory argent);
 
 	/**
 	 * Retrieve argent.
@@ -72,7 +72,7 @@ public interface BanqueManager {
 	 * @throws DecouvertException
 	 *             the decouvert exception
 	 */
-	public void retrieveArgent(Client client, Compte compte, Argent argent)
+	public void retrieveArgent(ClientMemory client, CompteMemory compte, ArgentMemory argent)
 			throws DecouvertException;
 
 }

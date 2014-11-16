@@ -1,38 +1,13 @@
 package com.formation.banque.model.entity;
 
-/**
- * The Class Argent.
- */
-public class Argent {
-
-	/** The id. */
-	private Integer id;
-
-	/** The somme. */
-	private Integer somme;
-
-	/**
-	 * Instantiates a new argent.
-	 *
-	 * @param id
-	 *            the id
-	 * @param somme
-	 *            the somme
-	 */
-	public Argent(Integer id, Integer somme) {
-		super();
-		this.id = id;
-		this.somme = somme;
-	}
+public abstract class Argent {
 
 	/**
 	 * Gets the id.
 	 *
 	 * @return the id
 	 */
-	public Integer getId() {
-		return id;
-	}
+	abstract public Integer getId();
 
 	/**
 	 * Sets the id.
@@ -40,18 +15,14 @@ public class Argent {
 	 * @param id
 	 *            the new id
 	 */
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	abstract public void setId(Integer id);
 
 	/**
 	 * Gets the somme.
 	 *
 	 * @return the somme
 	 */
-	public Integer getSomme() {
-		return somme;
-	}
+	abstract public Integer getSomme();
 
 	/**
 	 * Sets the somme.
@@ -59,8 +30,5 @@ public class Argent {
 	 * @param somme
 	 *            the new somme
 	 */
-	public void setSomme(Integer somme) {
-		this.somme = somme;
-	}
-
+	abstract public void setSomme(Integer somme);
 }

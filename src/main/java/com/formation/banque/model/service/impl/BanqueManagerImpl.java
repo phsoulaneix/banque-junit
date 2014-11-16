@@ -5,9 +5,9 @@ import java.sql.SQLException;
 import com.formation.banque.model.dao.ArgentDAO;
 import com.formation.banque.model.dao.ClientDAO;
 import com.formation.banque.model.dao.CompteDAO;
-import com.formation.banque.model.entity.Argent;
-import com.formation.banque.model.entity.Client;
-import com.formation.banque.model.entity.Compte;
+import com.formation.banque.model.entity.memory.ArgentMemory;
+import com.formation.banque.model.entity.memory.ClientMemory;
+import com.formation.banque.model.entity.memory.CompteMemory;
 import com.formation.banque.model.service.BanqueManager;
 import com.formation.banque.model.service.DecouvertException;
 
@@ -28,7 +28,7 @@ public class BanqueManagerImpl implements BanqueManager {
 	}
 
 	@Override
-	public Boolean addClient(Client client) {
+	public Boolean addClient(ClientMemory client) {
 		try {
 			return clientDao.create(client);
 		} catch (final SQLException e) {
@@ -39,31 +39,31 @@ public class BanqueManagerImpl implements BanqueManager {
 	}
 
 	@Override
-	public Boolean removeClient(Client client) {
+	public Boolean removeClient(ClientMemory client) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void addCompte(Client client, Compte compte) {
+	public void addCompte(ClientMemory client, CompteMemory compte) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public Boolean removeCompte(Client client, Compte compte) {
+	public Boolean removeCompte(ClientMemory client, CompteMemory compte) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void addArgent(Client client, Compte compte, Argent argent) {
+	public void addArgent(ClientMemory client, CompteMemory compte, ArgentMemory argent) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void retrieveArgent(Client client, Compte compte, Argent argent)
+	public void retrieveArgent(ClientMemory client, CompteMemory compte, ArgentMemory argent)
 			throws DecouvertException {
 		// TODO Auto-generated method stub
 

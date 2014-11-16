@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.formation.banque.model.dao.ArgentDAO;
-import com.formation.banque.model.entity.Argent;
+import com.formation.banque.model.entity.memory.ArgentMemory;
 
 /**
  * The Class ArgentDAOImplMemory.
@@ -13,7 +13,7 @@ import com.formation.banque.model.entity.Argent;
 public class ArgentDAOImplMemory implements ArgentDAO {
 
 	/** The argents. */
-	private final Map<Integer, Argent> argents = new HashMap<Integer, Argent>();
+	private final Map<Integer, ArgentMemory> argents = new HashMap<Integer, ArgentMemory>();
 
 	/*
 	 * (non-Javadoc)
@@ -21,7 +21,7 @@ public class ArgentDAOImplMemory implements ArgentDAO {
 	 * @see com.formation.banque.model.dao.DAO#create(java.lang.Object)
 	 */
 	@Override
-	public boolean create(Argent obj) throws SQLException {
+	public boolean create(ArgentMemory obj) throws SQLException {
 		if (obj.getId() == null || obj.getSomme() == null) {
 			return Boolean.FALSE;
 		}
@@ -38,7 +38,7 @@ public class ArgentDAOImplMemory implements ArgentDAO {
 	 * @see com.formation.banque.model.dao.DAO#delete(java.lang.Object)
 	 */
 	@Override
-	public boolean delete(Argent obj) throws SQLException {
+	public boolean delete(ArgentMemory obj) throws SQLException {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -49,7 +49,7 @@ public class ArgentDAOImplMemory implements ArgentDAO {
 	 * @see com.formation.banque.model.dao.DAO#update(java.lang.Object)
 	 */
 	@Override
-	public boolean update(Argent obj) throws SQLException {
+	public boolean update(ArgentMemory obj) throws SQLException {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -60,7 +60,7 @@ public class ArgentDAOImplMemory implements ArgentDAO {
 	 * @see com.formation.banque.model.dao.DAO#find(java.lang.Integer)
 	 */
 	@Override
-	public Argent find(Integer id) throws SQLException {
+	public ArgentMemory find(Integer id) throws SQLException {
 		if (!argents.containsKey(id)) {
 			throw new SQLException();
 		}
